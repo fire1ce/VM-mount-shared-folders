@@ -1,10 +1,10 @@
 #!/bin/bash
 
 vmware-hgfsclient | while read folder; do
-  echo "[i] Mounting ${folder}   (/mnt/shared/${folder})"
-  mkdir -p "/mnt/shared/${folder}"
-  umount -f "/mnt/shared/${folder}" 2>/dev/null
-  vmhgfs-fuse -o allow_other -o auto_unmount ".host:/${folder}" "/mnt/hgfs/${folder}"
+  echo "[i] Mounting ${folder}   (/root/sharedFolder/${folder})"
+  mkdir -p "/root/sharedFolder/${folder}"
+  umount -f "/root/sharedFolder/${folder}" 2>/dev/null
+  vmhgfs-fuse -o allow_other -o auto_unmount ".host:/${folder}" "/root/sharedFolder/${folder}"
 done
 
 sleep 2s
